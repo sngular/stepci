@@ -110,6 +110,11 @@ yargs(hideBin(process.argv))
   })
   .command('generate [spec] [path]', 'generate workflow from OpenAPI spec', yargs => {
     return yargs
+      .option('request-examples', {
+        describe: 'Path to request examples file',
+        type: 'string',
+        default: ''
+      })
       .positional('spec', {
         describe: 'openapi file url',
         type: 'string',
